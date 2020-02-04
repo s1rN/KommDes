@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/Chart.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div id="top-bar">
+    <label for="btc-val-switch">Energiekosten einer Bitcoin Transaktion 2017: 222KwH</label>
+    <input type="range" id="btc-val-switch" min="1" max="10" value="1" />
+
+  </div>
+  <div id="content" class="content">
+    <div id="ex-1" class="content-divs">
+      <h2> Der Bitcoin</h2>
+      <p id="btc-ex">
+        <img src="img/Bitcoin.jpg" alt="Bild von einem Bitcoin" id="btc-pic" />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nullam vehicula magna risus, et lobortis ligula faucibus vel.
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus varius diam, ut vestibulum enim.
+        Mauris pretium elit non lectus egestas faucibus. Ut posuere, mauris eget rhoncus fringilla, magna eros maximus purus, nec commodo metus nulla in metus.
+        Morbi sollicitudin luctus lacus sit amet pulvinar. Sed tincidunt ac felis in tristique. Cras non mauris tincidunt, sodales nibh ut, maximus arcu.
+        Vestibulum eget risus ultrices, convallis enim quis, consectetur est. Praesent venenatis quam eu risus convallis, nec iaculis odio molestie.
+        Nunc lobortis imperdiet ipsum id fringilla. Nunc tincidunt nisi at lacus mollis, ut ullamcorper dui vulputate. Nunc vitae neque nec arcu pulvinar pharetra.
+        Integer auctor, lacus nec aliquet pharetra, enim mi lacinia odio, lobortis convallis orci ante tristique mi. Nullam pharetra efficitur diam, euismod egestas erat suscipit ac.
+        Integer risus ex, tristique eu ligula non, sagittis rhoncus nunc.
+        Proin id eros eu nisi imperdiet pharetra. Sed in est non nisl rutrum accumsan vel fringilla sapien.
+        Suspendisse semper aliquet lacus, venenatis placerat purus. Maecenas nec elit id ante tincidunt dapibus id a turpis.
+        Nunc sodales turpis dapibus, accumsan dolor id, ornare lectus. Aliquam erat volutpat. Aenean elementum ligula odio, vitae tempus lacus vestibulum sed.
+        Curabitur a ornare eros. Sed fermentum nisi ac ex congue, lacinia tristique justo porta. Nullam in interdum orci.
+        Ut quam turpis, porttitor eget mollis non, pulvinar vel nulla. Donec vel congue erat, a fringilla neque. Donec cursus tristique aliquet.
+        In hac habitasse platea dictumst. Maecenas vel fermentum sem, eu imperdiet dolor. Vestibulum pellentesque luctus dolor, a placerat mauris ornare eget.
+      </p>
+
+
+    </div>
+    <div id="ex-2" class="content-divs">
+      <p id="blockchain-ex">Hier hin kommt die Blockchain Erklärung</p>
+      <img src="" alt="Bild der Blockchain" id="blockchain-pic" />
+    </div>
+    <div id="slider-1" class="content-divs">
+      <table id="icon-table">
+        <tr>
+          <td rowspan="4" class="table-ex">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula magna risus, et lobortis ligula faucibus vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</td>
+        </tr>
+        <tr>
+          <td id="wsh-txt">Waschmaschinen</td>
+          <td id="wsh-icons"></td>
+        </tr>
+        <tr>
+          <td id="lat-txt">Straßenlaternen</td>
+          <td id="lat-icons"></td>
+        </tr>
+        <tr>
+          <td id="hh-txt">Haushalte</td>
+          <td id="hh-icons"></td>
+        </tr>
+      </table>
+      <input type="range" id="icon-switcher" min="1" max="2" value="1" />
+    </div>
+    <div id="slider-2" class="content-divs">
+      <canvas id="myChart" width="400" height="400"></canvas>
+      <input type="range" id="global-switcher" min="1" max="10" value="1" />
+    </div>
+    <div id="slider-3" class="content-divs">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d5342142.969561918!2d3.8089042324687314!3d46.23854107352096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x47b8c991ac02676d%3A0x9fbe54f37e9ecfe0!2sHochschule%20D%C3%BCsseldorf%20-%20Fachbereich%20Medien%2C%20M%C3%BCnsterstra%C3%9Fe%20156%2C%2040476%20D%C3%BCsseldorf!3m2!1d51.2469201!2d6.7916035!4m5!1s0x12a49816718e30e5%3A0x44b0fb3d4f47660a!2sBarcelona!3m2!1d41.3850639!2d2.1734035!5e0!3m2!1sen!2sde!4v1580654392054!5m2!1sen!2sde" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" id="map-1" class="show"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d10673162.875743965!2d22.977049318719263!3d42.31457462415898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x47b8c991ac02676d%3A0x9fbe54f37e9ecfe0!2sHochschule%20D%C3%BCsseldorf%20-%20Fachbereich%20Medien%2C%20M%C3%BCnsterstra%C3%9Fe%20156%2C%2040476%20D%C3%BCsseldorf!3m2!1d51.2469201!2d6.7916035!4m5!1s0x1502d7d634c1fc4b%3A0xd96f623e456ee1cb!2sJerusalem!3m2!1d31.768318999999998!2d35.21371!5e0!3m2!1sen!2sde!4v1580654788090!5m2!1sen!2sde" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" id="map-2" class="hide"></iframe>
+      <input type="range" id="map-switch" min="1" max="2" value="1" />
+    </div>
+  </div>
+
+  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/Chart.js"></script>
+
+
+
+
+
+</body>
+
+</html>

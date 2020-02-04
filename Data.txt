@@ -1,0 +1,31 @@
+bitcointransaktion stromverbrauch 2017: 222kwh
+bitcointransaktion stromverbrauch 2020: 653kwh
+
+Straßenlaterne: 
+
+jährlich: 4 TWH -> 4.000.000.000 KWH
+Anzahl: 9.125.547
+jährlich pro Laterne: 438kwh
+täglich pro laterne: 1.2kwh
+
+
+eine waschmaschine waschen: 1kwh
+
+Jährlich haushalte 
+1 Personen Haushalt: 2.000 bis 2.500 KWH
+2 Personen Haushalt: 3.000 bis 3.200 KWH 
+3 Personen Haushalt: 3.500 bis 3.900 KWH 
+4 Personen Haushalt: 3.800 bis 4.200 KWH 
+5+ Personen Haushalt: 4.800 KWH +
+
+täglich haushalte 
+1 Personen Haushalt: 5,47 KWH - 6,84 KWH 
+2 Personen Haushalt: 8.21 KWH - 8,76 KWH 
+3 Personen Haushalt: 9,58 KWH - 10.68 KWH 
+4 Personen Haushalt: 10.4 KWH - 11,5 KWH 
+5 Personen Haushalt: 13,14 KWH +
+
+
+tesla mdoel 3 14,7kwh / 100km 
+Reichweite pro transaktion: (2017) 1500km
+Reichweite pro transaktion: (2017) 4400km
