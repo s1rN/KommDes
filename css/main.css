@@ -314,13 +314,20 @@ body {
 
 #top-bar {
   position: fixed;
-  top: 0px;
+  top: 884px;
   z-index: 1;
+}
 
+#topbar-content {
+  left: 200px;
 }
 
 #myChart {
   max-width: 400px;
   max-height: 400px;
+}
+
+#slider-2 {
+  margin-top: 100px;
 }
 

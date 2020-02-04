@@ -1,68 +1,81 @@
 jQuery(document).ready(function($){
 
-
-
-  $('#map-switch').on('change', function() {
-    switch($('#map-switch').val()) {
-      case "1":
-        $('#map-2').removeClass("show").addClass("hide");
-        $('#map-1').removeClass("hide").addClass("show");
-        break;
-      case "2":
-        $('#map-1').removeClass("show").addClass("hide");
-        $('#map-2').removeClass("hide").addClass("show");
-        break;
-    }
+  $('#btc-val-switch').on('change', function() {
+    chartChanger($('#btc-val-switch').val());
+    iconChanger($('#btc-val-switch').val(), $);
+    mapChanger($('#btc-val-switch').val(), $);
   });
-
-
-  $('#icon-switcher').on('change', function() {
-    $('#hh-icons').innerHTML = "";
-    console.log("TEST DU HURENSOHN");
-    switch($('#icon-switcher').val()) {
-      case "1":
-        for(var i = 0; i <= 5; i++) {
-          var hh_icon_elem = document.createElement("img");
-          hh_icon_elem.setAttribute("src", "./img/Haus.png");
-          hh_icon_elem.setAttribute("height", "90");
-          hh_icon_elem.setAttribute("width", "90");
-          hh_icon_elem.setAttribute("alt", "");
-          hh_icon_elem.setAttribute("id", "icon-"+i);
-          console.log("TEST: " + i);
-          document.getElementById('hh-icons').appendChild(hh_icon_elem);
-        }
-        break;
-      case "2":
-        break;
-    }
-  });
-
-  chartChanger(null);
 });
 
 
+function mapChanger(_switchVal, $) {
+  $('#hh-icons').innerHTML = "";
+  console.log("TEST DU HURENSOHN");
+  switch(_switchVal) {
+    case "1":
+      for(var i = 0; i <= 5; i++) {
+        var hh_icon_elem = document.createElement("img");
+        hh_icon_elem.setAttribute("src", "./img/Haus.png");
+        hh_icon_elem.setAttribute("height", "90");
+        hh_icon_elem.setAttribute("width", "90");
+        hh_icon_elem.setAttribute("alt", "");
+        hh_icon_elem.setAttribute("id", "icon-"+i);
+        console.log("TEST: " + i);
+        document.getElementById('hh-icons').appendChild(hh_icon_elem);
+      }
+      break;
+    case "2":
+      break;
+  }
+}
 
+function iconChanger(_switchVal, $) {
+  switch(_switchVal) {
+    case "1":
+      $('#map-2').removeClass("show").addClass("hide");
+      $('#map-1').removeClass("hide").addClass("show");
+      break;
+    case "2":
+      $('#map-1').removeClass("show").addClass("hide");
+      $('#map-2').removeClass("hide").addClass("show");
+      break;
+  }
+}
 
-
-function chartChanger(_vals) {
-  let data = [4,6,10];
-  let labels = ["A", "B", "C"];
-  /*
-  for(let i = 0; i <= _vals.length; i++) {
-    data.push(_vals.value);
-    labels.push(_vals.label);
+function setChartVals(_switchVal) {
+  console.log(_switchVal);
+  let data = [];
+  switch(_switchVal) {
+    case "1":
+      data = [];
+      data.push({label: "A", value: 30});
+      data.push({label: "B", value: 50});
+      data.push({label: "C", value: 100});
+      break;
+    case "2":
+      data = [];
+      data.push({label: "NewA", value: 50});
+      data.push({label: "NewB", value: 70});
+      data.push({label: "NewC", value: 150});
+      break;
   }
 
-   */
+  return data;
+}
+
+
+
+function chartChanger(_switchVal) {
+  let data = setChartVals(_switchVal);
 
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: labels,
+      labels: [data[0].label, data[1].label, data[2].label],
       datasets: [{
-        label: '# of Votes',
-        data: data,
+        label: 'Verbrauch in kW/H',
+        data: [data[0].value, data[1].value, data[2].value],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -83,11 +96,11 @@ function chartChanger(_vals) {
     }]
 },
 options: {
-    scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
+  scales: {
+    yAxes: [{
+      ticks: {
+        beginAtZero: true
+        }
         }]
       }
     }
