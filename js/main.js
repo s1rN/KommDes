@@ -4,36 +4,62 @@ var btc_global_data = [];
 var chart_labels = [];
 var chart_values = [];
 
+
 jQuery(document).ready(function($){
 
   cnt_data = getCountryData();
+  btc_global_data = getGlobalBitcoinData();
+  btc_single_data = getSingleBitcoinData();
 
   $('#btc-val-switch').on('change', function() {
-    chartChanger($('#btc-val-switch').val());
     iconChanger($('#btc-val-switch').val(), $);
     mapChanger($('#btc-val-switch').val(), $);
+    chartValueChanger($);
   });
 
   $('.checkboxes').on('click', function () {
-    let checkboxes = $('.checkboxes');
-    let checked_boxes = [];
-    for(let i = 0; i < checkboxes.length; i++) {
-      if(checkboxes[i].checked) {
-        checked_boxes.push(checkboxes[i]);
-      }
-    }
-    chart_labels = [];
-    chart_values = [];
-    for(let i = 0; i < checked_boxes.length; i++) {
-      chart_labels.push(cnt_data[checked_boxes[i].id.substring(4)][1]);
-      chart_values.push(cnt_data[checked_boxes[i].id.substring(4)][2]);
-    }
-    chartChanger(chart_labels,chart_values);
-
+    chartValueChanger($)
   });
-
-
 });
+
+
+function chartValueChanger($) {
+  let checkboxes = $('.checkboxes');
+  let checked_boxes = [];
+  for(let i = 0; i < checkboxes.length; i++) {
+    if(checkboxes[i].checked) {
+      checked_boxes.push(checkboxes[i]);
+    }
+  }
+  chart_labels = [];
+  chart_values = [];
+  let btc_inside = false;
+
+  for(let i = 0; i < checked_boxes.length; i++) {
+    if(btcValComparator(btc_global_data[$('#btc-val-switch').val()][1], cnt_data[checked_boxes[i].id.substring(4)][2]) && btc_inside === false) {
+      chart_labels.push("Bitcoin");
+      chart_values.push(btc_global_data[$('#btc-val-switch').val()][1]);
+      btc_inside = true;
+    }
+    chart_labels.push(cnt_data[checked_boxes[i].id.substring(4)][1]);
+    chart_values.push(cnt_data[checked_boxes[i].id.substring(4)][2]);
+  }
+  if(btc_inside === false) {
+    chart_labels.push("Bitcoin");
+    chart_values.push(btc_global_data[$('#btc-val-switch').val()][1]);
+  }
+  chartChanger(chart_labels,chart_values);
+}
+
+/**
+ * Compares String Values as Floats.
+ * @param _val1 -> Bitcoin Value
+ * @param _val2 -> Other Value
+ * @returns {boolean} -> true if bitcoin value is smaller than the other value
+ */
+function btcValComparator(_val1, _val2) {
+  return parseFloat(_val1) < parseFloat(_val2);
+}
 
 function mapChanger(_switchVal, $) {
   $('#hh-icons').innerHTML = "";
@@ -66,7 +92,6 @@ function readTextFile(file) {
       if(rawFile.status === 200 || rawFile.status == 0)
       {
         allText = rawFile.responseText;
-        alert(allText);
       }
     }
   };
@@ -86,7 +111,8 @@ function getGlobalBitcoinData() {
     form_data[i] = data[i].split(",");
   }
 
-  btc_global_data = form_data;
+  console.log(form_data);
+  return form_data;
 }
 
 function getSingleBitcoinData() {
@@ -96,7 +122,7 @@ function getSingleBitcoinData() {
     form_data[i] = data[i].split(",");
   }
 
-  btc_single_data = form_data;
+  return form_data;
 }
 
 function getCountryData() {
@@ -150,7 +176,7 @@ function chartChanger(_labels, _values) {
     data: {
       labels: _labels,
       datasets: [{
-        label: 'Verbrauch in kW/H',
+        label: 'Verbrauch in tW/H',
         data: _values,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
