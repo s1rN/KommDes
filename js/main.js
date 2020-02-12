@@ -3,7 +3,32 @@ var btc_single_data = [];
 var btc_global_data = [];
 var chart_labels = [];
 var chart_values = [];
-
+var chart_colors = [
+  'rgba(255, 99, 132, 0.2)',
+  'rgba(54, 162, 235, 0.2)',
+  'rgba(255, 206, 86, 0.2)',
+  'rgba(75, 192, 192, 0.2)',
+  'rgba(153, 102, 255, 0.2)',
+  'rgba(255, 159, 64, 0.2)',
+  'rgba(0, 153, 51, 0.2)',
+  'rgba(255, 80, 80, 0.2)',
+  'rgba(0, 102, 255, 0.2)',
+  'rgba(204, 102, 153, 0.2)',
+  'rgba(0, 255, 255, 0.2)'
+];
+var chart_borders = [
+  'rgba(255, 99, 132, 1)',
+  'rgba(54, 162, 235, 1)',
+  'rgba(255, 206, 86, 1)',
+  'rgba(75, 192, 192, 1)',
+  'rgba(153, 102, 255, 1)',
+  'rgba(255, 159, 64, 1)',
+  'rgba(0, 153, 51, 1)',
+  'rgba(255, 80, 80, 1)',
+  'rgba(0, 102, 255, 1)',
+  'rgba(204, 102, 153, 1)',
+  'rgba(0, 255, 255, 1)'
+];
 
 jQuery(document).ready(function($){
 
@@ -33,22 +58,31 @@ function chartValueChanger($) {
   }
   chart_labels = [];
   chart_values = [];
+  let colors = [];
+  let borders = [];
   let btc_inside = false;
 
   for(let i = 0; i < checked_boxes.length; i++) {
     if(btcValComparator(btc_global_data[$('#btc-val-switch').val()][1], cnt_data[checked_boxes[i].id.substring(4)][2]) && btc_inside === false) {
       chart_labels.push("Bitcoin");
       chart_values.push(btc_global_data[$('#btc-val-switch').val()][1]);
+      colors.push('rgba(255, 255, 0, 0.6)');
+      borders.push('rgba(0, 0, 0, 1)');
       btc_inside = true;
     }
     chart_labels.push(cnt_data[checked_boxes[i].id.substring(4)][1]);
     chart_values.push(cnt_data[checked_boxes[i].id.substring(4)][2]);
+    colors.push(chart_colors[checked_boxes[i].id.substring(4)]);
+    borders.push(chart_borders[checked_boxes[i].id.substring(4)]);
+
   }
   if(btc_inside === false) {
     chart_labels.push("Bitcoin");
     chart_values.push(btc_global_data[$('#btc-val-switch').val()][1]);
+    colors.push('rgba(255, 255, 0, 0.6)');
+    borders.push('rgba(255, 255, 0, 1)');
   }
-  chartChanger(chart_labels,chart_values);
+  chartChanger(chart_labels,chart_values, colors, borders);
 }
 
 /**
@@ -61,7 +95,7 @@ function btcValComparator(_val1, _val2) {
   return parseFloat(_val1) < parseFloat(_val2);
 }
 
-function mapChanger(_switchVal, $) {
+function iconChanger(_switchVal, $) {
   $('#hh-icons').innerHTML = "";
   switch(_switchVal) {
     case "1":
@@ -138,6 +172,10 @@ function getCountryData() {
     item_elem.setAttribute("type", "checkbox");
     item_elem.setAttribute("class", "checkboxes");
 
+    if(i === 0 || i === 3 || i === 7) {
+      item_elem.checked = true;
+    }
+
     let label_elem = document.createElement("label");
     label_elem.setAttribute("id", "label-"+i);
     label_elem.setAttribute("for","box-"+i);
@@ -152,7 +190,7 @@ function getCountryData() {
   return form_data;
 }
 
-function iconChanger(_switchVal, $) {
+function mapChanger(_switchVal, $) {
   switch(_switchVal) {
     case "1":
       $('#map-2').removeClass("show").addClass("hide");
@@ -168,7 +206,7 @@ function iconChanger(_switchVal, $) {
 
 
 
-function chartChanger(_labels, _values) {
+function chartChanger(_labels, _values, _colors, _borders) {
 
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
@@ -178,43 +216,20 @@ function chartChanger(_labels, _values) {
       datasets: [{
         label: 'Verbrauch in tW/H',
         data: _values,
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(0, 153, 51, 0.2)',
-          'rgba(255, 80, 80, 0.2)',
-          'rgba(0, 102, 255, 0.2)',
-          'rgba(204, 102, 153, 0.2)',
-          'rgba(255, 255, 0, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(0, 153, 51, 1)',
-          'rgba(255, 80, 80, 1)',
-          'rgba(0, 102, 255, 1)',
-          'rgba(204, 102, 153, 1)',
-          'rgba(255, 255, 0, 1)'
-        ],
+        backgroundColor: _colors,
+        borderColor: _borders,
         borderWidth: 1
     }]
 },
-options: {
-  scales: {
-    yAxes: [{
-      ticks: {
-        beginAtZero: true
-        }
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
         }]
-      }
+      },
+      events:[]
     }
   });
 }
