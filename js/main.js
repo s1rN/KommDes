@@ -32,6 +32,7 @@ var chart_borders = [
 
 jQuery(document).ready(function($){
 
+
   cnt_data = getCountryData();
   btc_global_data = getGlobalBitcoinData();
   btc_single_data = getSingleBitcoinData();
@@ -45,8 +46,17 @@ jQuery(document).ready(function($){
   $('.checkboxes').on('click', function () {
     chartValueChanger($)
   });
+  chartValueChanger($);
+
+
 });
 
+jQuery(function() {
+  jQuery.scrollify({
+    section : ".content-divs",
+    scrollSpeed: 1100,
+  });
+});
 
 function chartValueChanger($) {
   let checkboxes = $('.checkboxes');
