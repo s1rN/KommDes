@@ -1,0 +1,1 @@
+0,Luxemburg,7.65;1,Dänemark,32.99;2,Schweiz,61.97;3,Tschechien,65.78;4,Österreich,71.11;5,Belgien,87.89;6,Niederlande,115.33;7,Polen,151.01;8,Italien,304.05;9,Frankreich,422.80;10,Deutschland,568.26;
