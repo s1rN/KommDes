@@ -441,3 +441,13 @@ table {
   border-radius: 20px;
   text-decoration: none;
 }
+
+.consumption {
+  height: 70%;
+  width: 100%;
+  text-align: center;
+}
+
+.cons {
+
+}
