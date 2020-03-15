@@ -386,6 +386,22 @@ th {
   border-width: medium;
 }
 
+.th-large {
+  width: 80%;
+  height: 10%;
+  border: black;
+  border-style: dashed;
+  border-width: medium;
+}
+
+.th-small {
+  width: 20%;
+  height: 10%;
+  border: black;
+  border-style: dashed;
+  border-width: medium;
+}
+
 .subcontent-divs {
   text-align: center;
   width: 90%;
