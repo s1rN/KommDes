@@ -32,11 +32,12 @@ var chart_borders = [
 
 jQuery(document).ready(function($){
 
-  addButtonListeners($);
+
 
   cnt_data = getCountryData();
   btc_global_data = getGlobalBitcoinData();
   btc_single_data = getSingleBitcoinData();
+  addButtonListeners($);
   chartValueChanger($)
 
 });
@@ -281,12 +282,45 @@ function getCountryData() {
     let label_elem = document.createElement("label");
     label_elem.setAttribute("id", "label-"+i);
     label_elem.setAttribute("for","box-"+i);
+    label_elem.setAttribute("class", "checkbox-labels");
     label_elem.innerText = " " + form_data[i][1];
 
     li_elem.appendChild(item_elem);
     li_elem.appendChild(label_elem);
 
-    document.getElementById("chart-boxes").appendChild(li_elem);
+    switch(i) {
+      case 0:
+        document.getElementById("chart-boxes-1").appendChild(li_elem);
+        break;
+      case 1:
+        document.getElementById("chart-boxes-1").appendChild(li_elem);
+        break;
+      case 2:
+        document.getElementById("chart-boxes-2").appendChild(li_elem);
+        break;
+      case 3:
+        document.getElementById("chart-boxes-2").appendChild(li_elem);
+        break;
+      case 4:
+        document.getElementById("chart-boxes-3").appendChild(li_elem);
+        break;
+      case 5:
+        document.getElementById("chart-boxes-3").appendChild(li_elem);
+        break;
+      case 6:
+        document.getElementById("chart-boxes-4").appendChild(li_elem);
+        break;
+      case 7:
+        document.getElementById("chart-boxes-4").appendChild(li_elem);
+        break;
+      case 8:
+        document.getElementById("chart-boxes-5").appendChild(li_elem);
+        break;
+      case 9:
+        document.getElementById("chart-boxes-5").appendChild(li_elem);
+        break;
+    }
+
 
   }
   return form_data;

@@ -411,26 +411,49 @@ th {
   margin-left: 5%;
   margin-right: 5%;
   border: medium dashed black;
+
 }
 
 
 #myChart {
   width: 100%;
-  height: 80%;
+  height: 70%;
   max-width: 100%;
-  max-height: 80%;
+  max-height: 70%;
   border: medium dashed black;
 }
 
-#chart-boxes {
+#chart-boxes-ul {
+  list-style: none;
+  height: 13%;
+  max-width: 100%;
+  max-height: 13%;
   border: medium dashed black;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: -160px;
+  margin-top: 0;
 }
+
+.chart-boxes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.checkbox-labels {
+  font-size: 26px !important;
+  color: black;
+}
+
+
 
 #vergleiche {
   width: 100%;
-  height: 80%;
+  height: 40%;
   max-width: 100%;
-  max-height: 80%;
+  max-height: 40%;
   border: medium dashed black;
 }
 
@@ -620,3 +643,4 @@ input[type=range]:focus::-ms-fill-upper {
   width: 2500px;
   height: 400px;
 }
+
