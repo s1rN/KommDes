@@ -62,6 +62,34 @@ jQuery(document).ready(function($){
     }
   });
 
+  $('#switch2').on('click', function() {
+    if($('#switch-2-1').hasClass("show")) {
+      $('#switch-2-1').removeClass("show");
+      $('#switch-2-1').addClass("hide");
+      $('#switch-2-2').removeClass('hide');
+      $('#switch-2-2').addClass('show');
+    } else if($('#switch-2-2').hasClass("show")) {
+      $('#switch-2-2').removeClass("show");
+      $('#switch-2-2').addClass("hide");
+      $('#switch-2-1').removeClass('hide');
+      $('#switch-2-1').addClass('show');
+    }
+  });
+
+  $('#switch3').on('click', function() {
+    if($('#switch-3-1').hasClass("show")) {
+      $('#switch-3-1').removeClass("show");
+      $('#switch-3-1').addClass("hide");
+      $('#switch-3-2').removeClass('hide');
+      $('#switch-3-2').addClass('show');
+    } else if($('#switch-3-2').hasClass("show")) {
+      $('#switch-3-2').removeClass("show");
+      $('#switch-3-2').addClass("hide");
+      $('#switch-3-1').removeClass('hide');
+      $('#switch-3-1').addClass('show');
+    }
+  });
+
 
 });
 
