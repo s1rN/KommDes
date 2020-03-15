@@ -116,8 +116,11 @@ function addButtonListeners($) {
 
 function textChanger($, _switchVal) {
   $('#twh1').html(btc_global_data[_switchVal][1] + " TWh");
+  $('#total-text').html("Energieverbrauch des Bitcoin Netzwerks im " + btc_global_data[_switchVal][2]);
   $('#kwh1').html(btc_single_data[_switchVal][1] + " KWh");
+  $('#single1-text').html("Energieverbrauch einer Bitcoin-Transaktion im " + btc_single_data[_switchVal][2]);
   $('#kwh2').html(btc_single_data[_switchVal][1] + " KWh");
+  $('#total-text').html("Energieverbrauch des Bitcoin Netzwerks im " + btc_single_data[_switchVal][2]);
   $('#switch-label').html(btc_single_data[_switchVal][2]);
 }
 
