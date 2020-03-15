@@ -48,6 +48,20 @@ jQuery(document).ready(function($){
   });
   chartValueChanger($);
 
+  $('#switch1').on('click', function() {
+    if($('#switch-1-1').hasClass("show")) {
+      $('#switch-1-1').removeClass("show");
+      $('#switch-1-1').addClass("hide");
+      $('#switch-1-2').removeClass('hide');
+      $('#switch-1-2').addClass('show');
+    } else if($('#switch-1-2').hasClass("show")) {
+      $('#switch-1-2').removeClass("show");
+      $('#switch-1-2').addClass("hide");
+      $('#switch-1-1').removeClass('hide');
+      $('#switch-1-1').addClass('show');
+    }
+  });
+
 
 });
 
@@ -55,6 +69,7 @@ jQuery(function() {
   jQuery.scrollify({
     section : ".content-divs",
     scrollSpeed: 1100,
+    offset: -100
   });
 });
 
