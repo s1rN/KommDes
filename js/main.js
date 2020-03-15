@@ -32,11 +32,23 @@ var chart_borders = [
 
 jQuery(document).ready(function($){
 
+  addButtonListeners($);
 
   cnt_data = getCountryData();
   btc_global_data = getGlobalBitcoinData();
   btc_single_data = getSingleBitcoinData();
+});
 
+jQuery(function() {
+  jQuery.scrollify({
+    section : ".content-divs",
+    scrollSpeed: 1100,
+    offset: -100
+  });
+});
+
+
+function addButtonListeners($) {
   $('#btc-val-switch').on('change', function() {
     iconChanger($('#btc-val-switch').val(), $);
     mapChanger($('#btc-val-switch').val(), $);
@@ -89,17 +101,7 @@ jQuery(document).ready(function($){
       $('#switch-3-1').addClass('show');
     }
   });
-
-
-});
-
-jQuery(function() {
-  jQuery.scrollify({
-    section : ".content-divs",
-    scrollSpeed: 1100,
-    offset: -100
-  });
-});
+}
 
 function chartValueChanger($) {
   let checkboxes = $('.checkboxes');
