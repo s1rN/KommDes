@@ -38,6 +38,7 @@ jQuery(document).ready(function($){
   btc_global_data = getGlobalBitcoinData();
   btc_single_data = getSingleBitcoinData();
   chartValueChanger($)
+
 });
 jQuery(function() {
   jQuery.scrollify({
@@ -107,12 +108,16 @@ function addButtonListeners($) {
       $('#switch3').html("Animation Anzeigen");
     }
   });
+
+  $('#autoscroll-start').on('click', function() {
+    autoScroll($);
+  })
 }
 
 function textChanger($, _switchVal) {
-  //$('#<ID1>').html(btc_global_data[_switchVal][1] + " TWH");
-  //$('#<ID2>').html(btc_single_data[_switchVal][1] + " KWH");
-  //$('#<ID3>').html(btc_single_data[_switchVal][1] + " KWH");
+  $('#twh1').html(btc_global_data[_switchVal][1] + " TWH");
+  $('#kwh1').html(btc_single_data[_switchVal][1] + " KWH");
+  $('#kwh2').html(btc_single_data[_switchVal][1] + " KWH");
 }
 
 function chartValueChanger($) {
@@ -206,27 +211,6 @@ function iconChanger($, _switchVal, _icon) {
     document.getElementById("switch-2-2").appendChild(icon_elem);
   }
 }
-/*
-function iconChanger(_switchVal, $) {
-  $('#hh-icons').innerHTML = "";
-  switch(_switchVal) {
-    case "1":
-      for(var i = 0; i <= 5; i++) {
-        var hh_icon_elem = document.createElement("img");
-        hh_icon_elem.setAttribute("src", "./img/Haus.png");
-        hh_icon_elem.setAttribute("height", "90");
-        hh_icon_elem.setAttribute("width", "90");
-        hh_icon_elem.setAttribute("alt", "");
-        hh_icon_elem.setAttribute("id", "icon-"+i);
-        console.log("TEST: " + i);
-        document.getElementById('hh-icons').appendChild(hh_icon_elem);
-      }
-      break;
-    case "2":
-      break;
-  }
-}
-*/
 
 
 function readTextFile(file) {
@@ -315,6 +299,21 @@ function mapChanger(_switchVal, $) {
       $('#map-2').removeClass("hide").addClass("show");
       break;
   }
+}
+
+function autoScroll($) {
+  let elem = document.getElementById("anim");
+  let val = (5000 / 50) + 5;
+  let counter = 0;
+  let anim_interval = setInterval(function($) {
+    counter++;
+    elem.scrollLeft = elem.scrollLeft + 50;
+
+    if(counter === val) {
+      console.log("cleared");
+      clearInterval(anim_interval);
+    }
+  }, 40);
 }
 
 
