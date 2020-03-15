@@ -50,9 +50,10 @@ jQuery(function() {
 
 function addButtonListeners($) {
   $('#btc-val-switch').on('change', function() {
-    //iconChanger($('#btc-val-switch').val(), $);
+    iconChanger($, $('#btc-val-switch').val(), "hh-icons");
     mapChanger($('#btc-val-switch').val(), $);
     chartValueChanger($);
+    textChanger($, $('#btc-val-switch').val());
   });
 
   $('.checkboxes').on('click', function () {
@@ -108,6 +109,12 @@ function addButtonListeners($) {
   });
 }
 
+function textChanger($, _switchVal) {
+  //$('#<ID1>').html(btc_global_data[_switchVal][1] + " TWH");
+  //$('#<ID2>').html(btc_single_data[_switchVal][1] + " KWH");
+  //$('#<ID3>').html(btc_single_data[_switchVal][1] + " KWH");
+}
+
 function chartValueChanger($) {
   let checkboxes = $('.checkboxes');
   let checked_boxes = [];
@@ -157,9 +164,8 @@ function btcValComparator(_val1, _val2) {
 
 
 function iconChanger($, _switchVal, _icon) {
-  $('#hh-icons').innerHTML = "";
-  $('#wsh-icons').innerHTML = "";
-  $('#lat-icons').innerHTML = "";
+  $('#switch-2-2').empty();
+  console.log("SwitchVal: " + _switchVal + " | value: " + Math.round((_switchVal/260)));
   let value = 0;
   let src = null;
   let height = 0;
@@ -167,21 +173,21 @@ function iconChanger($, _switchVal, _icon) {
   let id = null;
   switch(_icon) {
     case "hh-icons":
-      value = Math.round((_switchVal / 260));
+      value = Math.round((btc_single_data[_switchVal][1] / 260));
       src= "./img/Haus.png";
-      height = 130;
-      width = 130;
+      height = 200;
+      width = 200;
       id = "hh";
       break;
     case "lat-icons":
-      value = Math.round((_switchVal / 36.5));
+      value = Math.round((btc_single_data[_switchVal][1] / 36.5));
       src= "./img/Laterne.png";
       height = 90;
       width = 90;
       id = "lat";
       break;
     case "wsh-icons":
-      value = Math.round((_switchVal / 1));
+      value = Math.round((btc_single_data[_switchVal][1] / 1));
       src= "./img/Waschmaschine.svg";
       height = 20;
       width = 20;
@@ -190,14 +196,14 @@ function iconChanger($, _switchVal, _icon) {
     default:
       break;
   }
-  for(let i = 0; i <= value; i++) {
+  for(let i = 0; i < value; i++) {
     let icon_elem = document.createElement("img");
     icon_elem.setAttribute("src", src);
     icon_elem.setAttribute("height", height.toString());
     icon_elem.setAttribute("width", width.toString());
     icon_elem.setAttribute("alt", "");
     icon_elem.setAttribute("id", id +"-icon-"+i);
-    document.getElementById(_icon).appendChild(icon_elem);
+    document.getElementById("switch-2-2").appendChild(icon_elem);
   }
 }
 /*
