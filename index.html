@@ -78,14 +78,12 @@
 
     <div id="slider-1" class="content-divs">
       <table>
-        <thead>
-          <th class="table-large">
-            fucking fuck
+        <tr>
+          <th id="chart-header" class="table-large">
+            chart-header
           </th>
-          <th class="table-small">
-            fucking fuck
-          </th>
-        </thead>
+          <th class="table-small"></th>
+        </tr>
         <tbody>
           <tr>
             <td class="table-large">
@@ -102,17 +100,17 @@
             </td>
             <td class="table-small">
               <div id="con1" class="consumption">
-                <table>
-                  <thead>
-                    <th>
-                      Energieverbrauch des Bitcoin-Netzwerks
+                <table class="tx">
+                  <tr>
+                    <th class="txh">
+                      Energieverbrauch des Bitcoin-Netzwerks im [Monat] [Jahr]
                     </th>
-                  </thead>
-                  <trow>
-                    <td id="twh1">
+                  </tr>
+                  <tr>
+                    <td id="twh1" class="cons">
                       xxx TWh
                     </td>
-                  </trow>
+                  </tr>
                 </table>
               </div>
               <button id="switch1" class="subcontent-switch">Diagramm anzeigen</button>
@@ -124,6 +122,12 @@
 
     <div id="slider-2" class="content-divs">
       <table>
+        <tr>
+          <th id="vergleich-header" class="table-large">
+            vergleich-header
+          </th>
+          <th class="table-small"></th>
+        </tr>
         <tbody>
           <tr>
             <td class="table-large">
@@ -133,22 +137,24 @@
                 <!-- TODO: Value für das ausgewählte Datum und den Einzel-Verbrauch im Text ausgeben -->
               </div>
               <div id="switch-2-2" class="subcontent-divs hide">
-                Vergleichschart
+                <div id="vergleiche">Vergleichschart</div>
+                <ul id="icon-boxes">
+                </ul>
               </div>
             </td>
             <td class="table-small">
               <div id="con2" class="consumption">
-                <table>
-                  <thead>
-                  <th>
-                    Energieverbrauch einer Bitcoin-Transaktion
+                <table class="tx">
+                  <tr>
+                  <th class="txh">
+                    Energieverbrauch einer Bitcoin-Transaktion  im [Monat] [Jahr]
                   </th>
-                  </thead>
-                  <trow>
-                    <td id="kwh1">
+                  </tr>
+                  <tr>
+                    <td id="kwh1" class="cons">
                       xxx KWh
                     </td>
-                  </trow>
+                  </tr>
                 </table>
               </div>
               <button id="switch2" class="subcontent-switch">Diagramm anzeigen</button>
@@ -179,6 +185,12 @@
     </div>
     <div id="slider-3" class="content-divs">
       <table>
+        <tr>
+        <th id="anim-header" class="table-large">
+          anim-header
+        </th>
+        <th class="table-small"></th>
+        </tr>
         <tbody>
           <tr>
             <td class="table-large">
@@ -201,17 +213,17 @@
             </td>
             <td class="table-small">
               <div id="con3" class="consumption">
-                <table class="cons">
-                  <thead>
-                  <th>
-                    Energieverbrauch einer Bitcoin-Transaktion
+                <table class="tx">
+                  <tr>
+                  <th  class="txh">
+                    Energieverbrauch einer Bitcoin-Transaktion  im [Monat] [Jahr]
                   </th>
-                  </thead>
-                  <trow>
-                    <td id="kwh2">
+                  </tr>
+                  <tr>
+                    <td id="kwh2" class="cons">
                       xxx KWh
                     </td>
-                  </trow>
+                  </tr>
                 </table>
               </div>
               <button id="switch3" class="subcontent-switch">Animation anzeigen</button>
@@ -231,7 +243,7 @@
 
   <div id="footer">
     <div id="footer-content">
-      <label for="btc-val-switch">Energiekosten einer Bitcoin Transaktion 2017: 222KwH</label>
+      <label for="btc-val-switch">[Monat] [Jahr]</label>
       <input type="range" id="btc-val-switch" min="0" max="35" value="0" />
     </div>
   </div>
