@@ -37,8 +37,8 @@ jQuery(document).ready(function($){
   cnt_data = getCountryData();
   btc_global_data = getGlobalBitcoinData();
   btc_single_data = getSingleBitcoinData();
+  chartValueChanger($)
 });
-
 jQuery(function() {
   jQuery.scrollify({
     section : ".content-divs",
@@ -50,7 +50,7 @@ jQuery(function() {
 
 function addButtonListeners($) {
   $('#btc-val-switch').on('change', function() {
-    iconChanger($('#btc-val-switch').val(), $);
+    //iconChanger($('#btc-val-switch').val(), $);
     mapChanger($('#btc-val-switch').val(), $);
     chartValueChanger($);
   });
@@ -58,7 +58,6 @@ function addButtonListeners($) {
   $('.checkboxes').on('click', function () {
     chartValueChanger($)
   });
-  chartValueChanger($);
 
   $('#switch1').on('click', function() {
     if($('#switch-1-1').hasClass("show")) {
@@ -66,11 +65,13 @@ function addButtonListeners($) {
       $('#switch-1-1').addClass("hide");
       $('#switch-1-2').removeClass('hide');
       $('#switch-1-2').addClass('show');
+      $('#switch1').html("Text Anzeigen");
     } else if($('#switch-1-2').hasClass("show")) {
       $('#switch-1-2').removeClass("show");
       $('#switch-1-2').addClass("hide");
       $('#switch-1-1').removeClass('hide');
       $('#switch-1-1').addClass('show');
+      $('#switch1').html("Diagramm Anzeigen");
     }
   });
 
@@ -80,11 +81,13 @@ function addButtonListeners($) {
       $('#switch-2-1').addClass("hide");
       $('#switch-2-2').removeClass('hide');
       $('#switch-2-2').addClass('show');
+      $('#switch2').html("Text Anzeigen");
     } else if($('#switch-2-2').hasClass("show")) {
       $('#switch-2-2').removeClass("show");
       $('#switch-2-2').addClass("hide");
       $('#switch-2-1').removeClass('hide');
       $('#switch-2-1').addClass('show');
+      $('#switch2').html("Diagramm Anzeigen");
     }
   });
 
@@ -94,11 +97,13 @@ function addButtonListeners($) {
       $('#switch-3-1').addClass("hide");
       $('#switch-3-2').removeClass('hide');
       $('#switch-3-2').addClass('show');
+      $('#switch3').html("Text Anzeigen");
     } else if($('#switch-3-2').hasClass("show")) {
       $('#switch-3-2').removeClass("show");
       $('#switch-3-2').addClass("hide");
       $('#switch-3-1').removeClass('hide');
       $('#switch-3-1').addClass('show');
+      $('#switch3').html("Animation Anzeigen");
     }
   });
 }
