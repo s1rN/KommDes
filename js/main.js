@@ -115,9 +115,10 @@ function addButtonListeners($) {
 }
 
 function textChanger($, _switchVal) {
-  $('#twh1').html(btc_global_data[_switchVal][1] + " TWH");
-  $('#kwh1').html(btc_single_data[_switchVal][1] + " KWH");
-  $('#kwh2').html(btc_single_data[_switchVal][1] + " KWH");
+  $('#twh1').html(btc_global_data[_switchVal][1] + " TWh");
+  $('#kwh1').html(btc_single_data[_switchVal][1] + " KWh");
+  $('#kwh2').html(btc_single_data[_switchVal][1] + " KWh");
+  $('#switch-label').html(btc_single_data[_switchVal][2]);
 }
 
 function chartValueChanger($) {
