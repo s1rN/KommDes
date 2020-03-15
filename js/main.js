@@ -150,6 +150,52 @@ function btcValComparator(_val1, _val2) {
   return parseFloat(_val1) < parseFloat(_val2);
 }
 
+
+function iconChanger($, _switchVal, _icon) {
+  $('#hh-icons').innerHTML = "";
+  $('#wsh-icons').innerHTML = "";
+  $('#lat-icons').innerHTML = "";
+  let value = 0;
+  let src = null;
+  let height = 0;
+  let width = 0;
+  let id = null;
+  switch(_icon) {
+    case "hh-icons":
+      value = Math.round((_switchVal / 260));
+      src= "./img/Haus.png";
+      height = 130;
+      width = 130;
+      id = "hh";
+      break;
+    case "lat-icons":
+      value = Math.round((_switchVal / 36.5));
+      src= "./img/Laterne.png";
+      height = 90;
+      width = 90;
+      id = "lat";
+      break;
+    case "wsh-icons":
+      value = Math.round((_switchVal / 1));
+      src= "./img/Waschmaschine.svg";
+      height = 20;
+      width = 20;
+      id = "wsh";
+      break;
+    default:
+      break;
+  }
+  for(let i = 0; i <= value; i++) {
+    let icon_elem = document.createElement("img");
+    icon_elem.setAttribute("src", src);
+    icon_elem.setAttribute("height", height.toString());
+    icon_elem.setAttribute("width", width.toString());
+    icon_elem.setAttribute("alt", "");
+    icon_elem.setAttribute("id", id +"-icon-"+i);
+    document.getElementById(_icon).appendChild(icon_elem);
+  }
+}
+/*
 function iconChanger(_switchVal, $) {
   $('#hh-icons').innerHTML = "";
   switch(_switchVal) {
@@ -169,6 +215,8 @@ function iconChanger(_switchVal, $) {
       break;
   }
 }
+*/
+
 
 function readTextFile(file) {
   let allText = "";

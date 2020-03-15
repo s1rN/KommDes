@@ -6,6 +6,7 @@ Straßenlaterne:
 jährlich: 4 TWH -> 4.000.000.000 KWH
 Anzahl: 9.125.547
 jährlich pro Laterne: 438kwh
+monatlich pro Laterne: 36.5kwh
 täglich pro laterne: 1.2kwh
 
 
@@ -24,6 +25,8 @@ täglich haushalte
 3 Personen Haushalt: 9,58 KWH - 10.68 KWH 
 4 Personen Haushalt: 10.4 KWH - 11,5 KWH 
 5 Personen Haushalt: 13,14 KWH +
+
+monatlich 2 personen haushalt: ~260kwh
 
 
 tesla mdoel 3 14,7kwh / 100km 
