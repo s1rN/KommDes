@@ -656,3 +656,7 @@ input[type=range]:focus::-ms-fill-upper {
   max-width: 100%;
   max-height: 100%;
 }
+
+#map-fix {
+  margin-bottom: -150px;
+}
