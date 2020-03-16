@@ -53,7 +53,7 @@ jQuery(function() {
 
 function addButtonListeners($) {
   $('#btc-val-switch').on('change', function() {
-    iconChanger($, $('#btc-val-switch').val(), "hh-icons");
+    iconChanger($, $('#btc-val-switch').val(), "wsh-icons");
     mapChanger($('#btc-val-switch').val(), $);
     chartValueChanger($);
     textChanger($, $('#btc-val-switch').val());
@@ -110,10 +110,6 @@ function addButtonListeners($) {
       $('#switch3').html("Animation Anzeigen");
     }
   });
-
-  $('#autoscroll-start').on('click', function() {
-    autoScroll($);
-  })
 }
 
 function textChanger($, _switchVal) {
@@ -185,7 +181,7 @@ function iconChanger($, _switchVal, _icon) {
   switch(_icon) {
     case "hh-icons":
       value = Math.round((btc_single_data[_switchVal][1] / 260));
-      src= "./img/Haus.png";
+      src= "./img/Haus-large.png";
       height = 200;
       width = 200;
       id = "hh";
@@ -193,7 +189,7 @@ function iconChanger($, _switchVal, _icon) {
       break;
     case "lat-icons":
       value = Math.round((btc_single_data[_switchVal][1] / 36.5));
-      src= "./img/Laterne.png";
+      src= "./img/Laterne-resized.png";
       height = 90;
       width = 90;
       id = "lat";
@@ -201,7 +197,7 @@ function iconChanger($, _switchVal, _icon) {
       break;
     case "wsh-icons":
       value = Math.round((btc_single_data[_switchVal][1] / 1));
-      src= "./img/Waschmaschine.svg";
+      src= "./img/Waschmaschine.png";
       height = 20;
       width = 20;
       id = "wsh";
@@ -294,32 +290,22 @@ function getCountryData() {
 
     switch(i) {
       case 0:
-        document.getElementById("chart-boxes-1").appendChild(li_elem);
-        break;
       case 1:
         document.getElementById("chart-boxes-1").appendChild(li_elem);
         break;
       case 2:
-        document.getElementById("chart-boxes-2").appendChild(li_elem);
-        break;
       case 3:
         document.getElementById("chart-boxes-2").appendChild(li_elem);
         break;
       case 4:
-        document.getElementById("chart-boxes-3").appendChild(li_elem);
-        break;
       case 5:
         document.getElementById("chart-boxes-3").appendChild(li_elem);
         break;
       case 6:
-        document.getElementById("chart-boxes-4").appendChild(li_elem);
-        break;
       case 7:
         document.getElementById("chart-boxes-4").appendChild(li_elem);
         break;
       case 8:
-        document.getElementById("chart-boxes-5").appendChild(li_elem);
-        break;
       case 9:
         document.getElementById("chart-boxes-5").appendChild(li_elem);
         break;
@@ -341,21 +327,6 @@ function mapChanger(_switchVal, $) {
       $('#map-2').removeClass("hide").addClass("show");
       break;
   }
-}
-
-function autoScroll($) {
-  let elem = document.getElementById("anim");
-  let val = (5000 / 50) + 5;
-  let counter = 0;
-  let anim_interval = setInterval(function($) {
-    counter++;
-    elem.scrollLeft = elem.scrollLeft + 50;
-
-    if(counter === val) {
-      console.log("cleared");
-      clearInterval(anim_interval);
-    }
-  }, 40);
 }
 
 
