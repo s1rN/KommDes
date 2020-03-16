@@ -53,7 +53,7 @@ jQuery(function() {
 
 function addButtonListeners($) {
   $('#btc-val-switch').on('change', function() {
-    iconChanger($, $('#btc-val-switch').val(), "wsh-icons");
+    iconChanger($, $('#btc-val-switch').val(), "lat-icons");
     mapChanger($('#btc-val-switch').val(), $);
     chartValueChanger($);
     textChanger($, $('#btc-val-switch').val());
@@ -181,32 +181,32 @@ function iconChanger($, _switchVal, _icon) {
   switch(_icon) {
     case "hh-icons":
       value = Math.round((btc_single_data[_switchVal][1] / 260));
-      src= "./img/Haus-large.png";
-      height = 200;
-      width = 200;
+      src= "./img/Haus-extra-large.png";
+      height = 256;
+      width = 256;
       id = "hh";
-      $('#vergleich-header').html("Der Energieverbrauch einer Bitcoin Transaktion in " + btc_single_data[_switchVal][2] + " entspricht dem monatlichen Energieverbauch von " + value + " zwei Personen Haushalten.");
+      $('#vergleich-header').html("Der Energieverbrauch einer Bitcoin Transaktion in " + btc_single_data[_switchVal][2] + " entspricht dem monatlichen Energieverbauch von " + value + " Zwei-Personen-Haushalten.");
       break;
     case "lat-icons":
       value = Math.round((btc_single_data[_switchVal][1] / 36.5));
-      src= "./img/Laterne-resized.png";
-      height = 90;
-      width = 90;
+      src= "./img/Laterne-large.png";
+      height = 100;
+      width = 100;
       id = "lat";
       $('#vergleich-header').html("Der Energieverbrauch einer Bitcoin Transaktion in " + btc_single_data[_switchVal][2] + " entspricht dem monatlichen Energieverbauch von " + value + " Straßenlaternen.");
       break;
     case "wsh-icons":
-      value = Math.round((btc_single_data[_switchVal][1] / 1));
+      value = Math.round((btc_single_data[_switchVal][1] / 16));
       src= "./img/Waschmaschine.png";
-      height = 20;
-      width = 20;
+      height = 80;
+      width = 80;
       id = "wsh";
       $('#vergleich-header').html("Der Energieverbrauch einer Bitcoin Transaktion in " + btc_single_data[_switchVal][2] + " entspricht dem Energieverbauch von " + value + " Ladungen Wäsche.");
       break;
     default:
       break;
   }
-  for(let i = 0; i < value; i++) {
+  for(let i = 1; i <= value; i++) {
     let icon_elem = document.createElement("img");
     icon_elem.setAttribute("src", src);
     icon_elem.setAttribute("height", height.toString());
@@ -214,6 +214,11 @@ function iconChanger($, _switchVal, _icon) {
     icon_elem.setAttribute("alt", "");
     icon_elem.setAttribute("id", id +"-icon-"+i);
     document.getElementById("switch-2-2").appendChild(icon_elem);
+    if(_icon === "lat-icons") {
+      if(i % 7 === 0) {
+        document.getElementById("switch-2-2").appendChild(document.createElement("br"));
+      }
+    }
   }
 }
 
