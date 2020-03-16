@@ -39,6 +39,7 @@ jQuery(document).ready(function($){
   btc_single_data = getSingleBitcoinData();
   addButtonListeners($);
   chartValueChanger($)
+  iconChanger($, 0, "hh-icons");
 
 });
 jQuery(function() {
@@ -188,6 +189,7 @@ function iconChanger($, _switchVal, _icon) {
       height = 200;
       width = 200;
       id = "hh";
+      $('#vergleich-header').html("Der Energieverbrauch einer Bitcoin Transaktion in " + btc_single_data[_switchVal][2] + " entspricht dem monatlichen Energieverbauch von " + value + " zwei Personen Haushalten.");
       break;
     case "lat-icons":
       value = Math.round((btc_single_data[_switchVal][1] / 36.5));
@@ -195,6 +197,7 @@ function iconChanger($, _switchVal, _icon) {
       height = 90;
       width = 90;
       id = "lat";
+      $('#vergleich-header').html("Der Energieverbrauch einer Bitcoin Transaktion in " + btc_single_data[_switchVal][2] + " entspricht dem monatlichen Energieverbauch von " + value + " Straßenlaternen.");
       break;
     case "wsh-icons":
       value = Math.round((btc_single_data[_switchVal][1] / 1));
@@ -202,6 +205,7 @@ function iconChanger($, _switchVal, _icon) {
       height = 20;
       width = 20;
       id = "wsh";
+      $('#vergleich-header').html("Der Energieverbrauch einer Bitcoin Transaktion in " + btc_single_data[_switchVal][2] + " entspricht dem Energieverbauch von " + value + " Ladungen Wäsche.");
       break;
     default:
       break;
