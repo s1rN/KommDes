@@ -32,3 +32,29 @@ monatlich 2 personen haushalt: ~260kwh
 tesla mdoel 3 14,7kwh / 100km 
 Reichweite pro transaktion: (2017) 1500km
 Reichweite pro transaktion: (2017) 4400km
+
+
+
+Datapoint 0: HSD -> Passau
+Datapoint 3: HSD -> Wels
+Datapoint 4: HSD -> Wien
+Datapoint 5: HSD -> Budapest
+Datapoint 8: HSD -> Szeged
+Datapoint 9: HSD -> Nis
+Datapoint 11: HSD -> Bolu
+Datapoint 12: HSD -> Sakaka
+Datapoint 13: HSD -> Riyadh
+Datapoint 14: HSD -> Al Batha
+Datapoint 15: HSD -> Abu Dhabi
+Datapoint 16: HSD -> Dubai
+Datapoint 18: HSD -> Abu Dhabi
+Datapoint 20: HSD -> Riyadh
+Datapoint 21: HSD -> Sakaka
+Datapoint 22: HSD -> Aksaray
+Datapoint 24: HSD -> Bolu
+Datapoint 25: HSD -> Ankara
+Datapoint 27: HSD -> Istanbul
+Datapoint 28: HSD -> Bolu
+Datapoint 29: HSD -> Aksaray
+Datapoint 30: HSD -> Reyhanli
+Datapoint 31: HSD -> Sakaka

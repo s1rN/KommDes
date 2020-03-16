@@ -39,7 +39,7 @@ jQuery(document).ready(function($){
   btc_single_data = getSingleBitcoinData();
   addButtonListeners($);
   chartValueChanger($)
-  iconChanger($, 0, "hh-icons");
+  iconChanger($, 0, $('input[name=icon-change]:checked').attr("id"));
 
 });
 jQuery(function() {
@@ -53,7 +53,7 @@ jQuery(function() {
 
 function addButtonListeners($) {
   $('#btc-val-switch').on('change', function() {
-    iconChanger($, $('#btc-val-switch').val(), "lat-icons");
+    iconChanger($, $('#btc-val-switch').val(), $('input[name=icon-change]:checked').attr("id"));
     mapChanger($('#btc-val-switch').val(), $);
     chartValueChanger($);
     textChanger($, $('#btc-val-switch').val());
@@ -110,6 +110,10 @@ function addButtonListeners($) {
       $('#switch3').html("Animation Anzeigen");
     }
   });
+
+  $('.radiobuttons').on("click change", function() {
+    iconChanger($, $('#btc-val-switch').val(), $('input[name=icon-change]:checked').attr("id"))
+  })
 }
 
 function textChanger($, _switchVal) {
@@ -171,7 +175,7 @@ function btcValComparator(_val1, _val2) {
 
 
 function iconChanger($, _switchVal, _icon) {
-  $('#switch-2-2').empty();
+  $('#vergleiche').empty();
   console.log("SwitchVal: " + _switchVal + " | value: " + Math.round((_switchVal/260)));
   let value = 0;
   let src = null;
@@ -190,16 +194,16 @@ function iconChanger($, _switchVal, _icon) {
     case "lat-icons":
       value = Math.round((btc_single_data[_switchVal][1] / 36.5));
       src= "./img/Laterne-large.png";
-      height = 100;
-      width = 100;
+      height = 90;
+      width = 90;
       id = "lat";
       $('#vergleich-header').html("Der Energieverbrauch einer Bitcoin Transaktion in " + btc_single_data[_switchVal][2] + " entspricht dem monatlichen Energieverbauch von " + value + " Straßenlaternen.");
       break;
     case "wsh-icons":
       value = Math.round((btc_single_data[_switchVal][1] / 16));
       src= "./img/Waschmaschine.png";
-      height = 80;
-      width = 80;
+      height = 75;
+      width = 75;
       id = "wsh";
       $('#vergleich-header').html("Der Energieverbrauch einer Bitcoin Transaktion in " + btc_single_data[_switchVal][2] + " entspricht dem Energieverbauch von " + value + " Ladungen Wäsche.");
       break;
@@ -213,10 +217,15 @@ function iconChanger($, _switchVal, _icon) {
     icon_elem.setAttribute("width", width.toString());
     icon_elem.setAttribute("alt", "");
     icon_elem.setAttribute("id", id +"-icon-"+i);
-    document.getElementById("switch-2-2").appendChild(icon_elem);
+    document.getElementById("vergleiche").appendChild(icon_elem);
     if(_icon === "lat-icons") {
       if(i % 7 === 0) {
-        document.getElementById("switch-2-2").appendChild(document.createElement("br"));
+        document.getElementById("vergleiche").appendChild(document.createElement("br"));
+      }
+    }
+    if(_icon === "wsh-icons") {
+      if (i % 14 === 0) {
+        document.getElementById("vergleiche").appendChild(document.createElement("br"));
       }
     }
   }
@@ -323,15 +332,97 @@ function getCountryData() {
 
 function mapChanger(_switchVal, $) {
   switch(_switchVal) {
+    case "0":
     case "1":
-      $('#map-2').removeClass("show").addClass("hide");
-      $('#map-1').removeClass("hide").addClass("show");
-      break;
     case "2":
-      $('#map-1').removeClass("show").addClass("hide");
-      $('#map-2').removeClass("hide").addClass("show");
+      mapCSSChanger($, 1);
+      break;
+    case "3":
+      mapCSSChanger($, 2);
+      break;
+    case "4":
+      mapCSSChanger($, 3);
+      break;
+    case "5":
+    case "6":
+    case "7":
+      mapCSSChanger($, 4);
+      break;
+    case "8":
+      mapCSSChanger($, 5);
+      break;
+    case "9":
+    case "10":
+      mapCSSChanger($, 6);
+      break;
+    case "11":
+      mapCSSChanger($, 7);
+      break;
+    case "12":
+      mapCSSChanger($, 8);
+      break;
+    case "13":
+      mapCSSChanger($, 9);
+      break;
+    case "14":
+      mapCSSChanger($, 10);
+      break;
+    case "15":
+      mapCSSChanger($, 11);
+      break;
+    case "16":
+    case "17":
+      mapCSSChanger($, 12);
+      break;
+    case "18":
+    case "19":
+      mapCSSChanger($, 13);
+      break;
+    case "20":
+      mapCSSChanger($, 14);
+      break;
+    case "21":
+      mapCSSChanger($, 15);
+      break;
+    case "22":
+    case "23":
+      mapCSSChanger($, 16);
+      break;
+    case "24":
+      mapCSSChanger($, 17);
+      break;
+    case "25":
+      mapCSSChanger($, 18);
+      break;
+    case "26":
+    case "27":
+      mapCSSChanger($, 19);
+      break;
+    case "28":
+      mapCSSChanger($, 20);
+      break;
+    case "29":
+      mapCSSChanger($, 21);
+      break;
+    case "30":
+      mapCSSChanger($, 22);
+      break;
+    case "31":
+    case "32":
+    case "33":
+    case "34":
+    case "35":
+      mapCSSChanger($, 23);
       break;
   }
+}
+
+function mapCSSChanger($, _mapID) {
+  let mapid = "#img-"+_mapID;
+  $('.map-images').addClass("hide");
+  $('.map-images').removeClass("show");
+  $(mapid).removeClass("hide");
+  $(mapid).addClass("show");
 }
 
 
