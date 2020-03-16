@@ -267,7 +267,7 @@ textarea {
 
 * {
   font-size: 100%;
-  font-family: Arial;
+  font-family: "Tahoma";
 }
 
 #footer {
@@ -288,7 +288,7 @@ textarea {
   width: 100vw;
   height: 5vh;
   position: fixed;
-  top: 0px;
+  top: 0;
   z-index: 1;
 }
 
@@ -349,9 +349,6 @@ table {
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(179,179,189,1) 66%, rgba(172,172,172,1) 100%);
   border-radius: 25px;
   box-shadow: 5px 5px 5px #555555;
-  border: black;
-  border-style: dashed;
-  border-width: medium;
 }
 
 th {
@@ -365,41 +362,26 @@ th {
 .table-even {
   width: 50%;
   height: 100%;
-  border: black;
-  border-style: dashed;
-  border-width: medium;
 }
 
 .table-large {
   width: 80%;
   height: 100%;
-  border: black;
-  border-style: dashed;
-  border-width: medium;
 }
 
 .table-small {
   width: 20%;
   height: 100%;
-  border: black;
-  border-style: dashed;
-  border-width: medium;
 }
 
 .th-large {
   width: 80%;
   height: 10%;
-  border: black;
-  border-style: dashed;
-  border-width: medium;
 }
 
 .th-small {
   width: 20%;
   height: 10%;
-  border: black;
-  border-style: dashed;
-  border-width: medium;
 }
 
 .subcontent-divs {
@@ -410,8 +392,6 @@ th {
   margin-bottom: 10%;
   margin-left: 5%;
   margin-right: 5%;
-  border: medium dashed black;
-
 }
 
 
@@ -420,7 +400,6 @@ th {
   height: 70%;
   max-width: 100%;
   max-height: 70%;
-  border: medium dashed black;
 }
 
 #chart-boxes-ul {
@@ -432,7 +411,6 @@ th {
   flex-direction: row;
   margin-bottom: -160px;
   margin-top: 0;
-  border: medium dashed black;
 }
 
 .chart-boxes {
@@ -454,7 +432,6 @@ th {
   height: 75%;
   max-width: 100%;
   max-height: 75%;
-  border: medium dashed black;
 }
 
 #icon-boxes {
@@ -467,7 +444,6 @@ th {
   flex-direction: row;
   margin-bottom: -160px;
   margin-top: 30px;
-  border: medium dashed black;
 }
 
 .radio-divs {
@@ -574,7 +550,6 @@ input[type=range]::-webkit-slider-runnable-track {
   width: 50%;
   height: 21px;
   cursor: pointer;
-  animate: 0.2s;
   box-shadow: 2px 2px 1px #000000;
   background: #bbbdbf;
   border-radius: 20px;
@@ -598,7 +573,6 @@ input[type=range]::-moz-range-track {
   width: 50%;
   height: 21px;
   cursor: pointer;
-  animate: 0.2s;
   box-shadow: 2px 2px 1px #000000;
   background: #bbbdbf;
   border-radius: 20px;
@@ -617,7 +591,6 @@ input[type=range]::-ms-track {
   width: 50%;
   height: 21px;
   cursor: pointer;
-  animate: 0.2s;
   background: transparent;
   border-color: transparent;
   color: transparent;
@@ -659,4 +632,18 @@ input[type=range]:focus::-ms-fill-upper {
 
 #map-fix {
   margin-bottom: -150px;
+}
+
+p {
+  font-size: 20px;
+  text-align: justify;
+  margin-bottom: -50px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.th-large {
+  font-size: 32px;
 }
