@@ -376,7 +376,15 @@ function chartChanger(_labels, _values, _colors, _borders) {
       scales: {
         yAxes: [{
           ticks: {
+            fontColor: "black",
+            fontSize: 18,
             beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            fontColor: "black",
+            fontSize: 18
           }
         }]
       },
