@@ -97,6 +97,7 @@ function addButtonListeners($) {
 
   $('#switch3').on('click', function() {
     if($('#switch-3-1').hasClass("show")) {
+      $('#anim-header').html("Der Energieverbrauch in 02.2017 entspricht einer Reise von ungefähr 650km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Passau an der Österreichischen Grenze.");
       $('#switch-3-1').removeClass("show");
       $('#switch-3-1').addClass("hide");
       $('#switch-3-2').removeClass('hide');
