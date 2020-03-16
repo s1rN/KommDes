@@ -336,76 +336,98 @@ function mapChanger(_switchVal, $) {
     case "1":
     case "2":
       mapCSSChanger($, 1);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 650km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Passau an der Österreichischen Grenze.");
       break;
     case "3":
       mapCSSChanger($, 2);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 755km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Wels in Österreich.");
       break;
     case "4":
       mapCSSChanger($, 3);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 945km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Wien.");
       break;
     case "5":
     case "6":
     case "7":
       mapCSSChanger($, 4);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 1160km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Budapest.");
       break;
     case "8":
       mapCSSChanger($, 5);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 1380km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Szeged an der Grenze zwischen Ungarn und Serbien.");
       break;
     case "9":
     case "10":
       mapCSSChanger($, 6);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 1740km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Nis in Serbien.");
       break;
     case "11":
       mapCSSChanger($, 7);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 2700km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Bolu in der Türkei.");
       break;
     case "12":
       mapCSSChanger($, 8);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 4800km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Sakaka in Saudi Arabien.");
       break;
     case "13":
       mapCSSChanger($, 9);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 5640km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Riyadh in Saudi Arabien.");
       break;
     case "14":
       mapCSSChanger($, 10);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 6075km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Al Batha an der Grenze Zwischen Saudi Arabien und den Vereinigten Arabischen Emiraten.");
       break;
     case "15":
       mapCSSChanger($, 11);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 6325km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Abu Dhabi in den Vereinigten Arabischen Emiraten.");
       break;
     case "16":
     case "17":
       mapCSSChanger($, 12);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 6900km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Dubai in den Vereinigten Arabischen Emiraten.");
       break;
     case "18":
     case "19":
       mapCSSChanger($, 13);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 6325km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Abu Dhabi in den Vereinigten Arabischen Emiraten.");
       break;
     case "20":
       mapCSSChanger($, 14);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 5640km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Riyadh in Saudi Arabien.");
       break;
     case "21":
       mapCSSChanger($, 15);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 4800km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Sakaka in Saudi Arabien.");
       break;
     case "22":
     case "23":
       mapCSSChanger($, 16);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 3200km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Aksaray in der Türkei.");
       break;
     case "24":
       mapCSSChanger($, 17);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 2700km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Bolu in der Türkei.");
       break;
     case "25":
       mapCSSChanger($, 18);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 2900km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Ankara in der Türkei.");
       break;
     case "26":
     case "27":
       mapCSSChanger($, 19);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 2600km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Istanbul in der Türkei.");
       break;
     case "28":
       mapCSSChanger($, 20);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 2700km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Bolu in der Türkei.");
       break;
     case "29":
       mapCSSChanger($, 21);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 3200km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Aksaray in der Türkei.");
       break;
     case "30":
       mapCSSChanger($, 22);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 3600km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Reyhanli an der Grenze zwischen der Türkei und Syrien.");
       break;
     case "31":
     case "32":
@@ -413,6 +435,7 @@ function mapChanger(_switchVal, $) {
     case "34":
     case "35":
       mapCSSChanger($, 23);
+      $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 4800km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Sakaka in Saudi Arabien.");
       break;
   }
 }
