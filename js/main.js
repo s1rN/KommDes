@@ -224,7 +224,7 @@ function iconChanger($, _switchVal, _icon) {
       width = 75;
       id = "wsh";
       if(vgl_show === true) {
-        $('#vergleich-header').html("Der Energieverbrauch einer Bitcoin Transaktion in " + btc_single_data[_switchVal][2] + " entspricht dem Energieverbauch von " + value + " Ladungen Wäsche.");
+        $('#vergleich-header').html("Der Energieverbrauch einer Bitcoin Transaktion in " + btc_single_data[_switchVal][2] + " entspricht dem Energieverbauch von " + value + " Monaten Wäschewaschen (bei durchschnittlich 4 Ladungen Wäsche pro Woche).");
       }
       break;
     default:
@@ -251,7 +251,7 @@ function iconChanger($, _switchVal, _icon) {
   }
 }
 
-
+/*
 function readTextFile(file) {
   let allText = "";
   let rawFile = new XMLHttpRequest();
@@ -269,6 +269,7 @@ function readTextFile(file) {
   rawFile.send(null);
   return allText;
 }
+ */
 
 function dataSplitter(data) {
   // let textdata = readTextFile(file);
