@@ -1,3 +1,7 @@
+var raw_single_btc_data = "0,95,02.2017;1,97,03.2017;2,100,04.2017;3,111,05.2017;4,139,06.2017;5,171,07.2017;6,174,08.2017;7,191,09.2017;8,203,10.2017;9,256,11.2017;10,259,12.2017;11,397,01.2018;12,705,02.2018;13,829,03.2018;14,893,04.2018;15,930,05.2018;16,1009,06.2018;17,960,07.2018;18,914,08.2018;19,868,09.2018;20,828,10.2018;21,684,11.2018;22,472,12.2018;23,438,01.2019;24,395,02.2019;25,424,03.2019;26,349,04.2019;27,384,05.2019;28,419,06.2019;29,495,07.2019;30,530,08.2019;31,618,09.2019;32,657,10.2019;33,634,11.2019;34,643,12.2019;35,652,01.2020;";
+var raw_global_btc_data = "0,9.56,02.2017;1,10.45,03.2017;2,11.08,04.2017;3,13.3,05.2017;4,14.15,06.2017;5,14.57,07.2017;6,16.01,08.2017;7,16.94,09.2017;8,21.03,10.2017;9,27.89,11.2017;10,33.73,12.2017;11,41.79,01.2017;12,49.40,02.2018;13,55.78,03.2018;14,60.97,04.2018;15,66.97,05.2018;16,71.12,06.2018;17,71.12,07.2018;18,73.12,08.2018;19,73.12,09.2018;20,73.12,10.2018;21,73.12,11.2018;22,42.01,12.2018;23,47.53,01.2019;24,48.59,02.2019;25,50.52,03.2019;26,55.42,04.2019;27,60.63,05.2019;28,66.52,06.2019;29,72.78,07.2019;30,73.12,08.2019;31,73.12,09.2019;32,73.12,10.2019;33,73.12,11.2019;34,73.12,12.2019;35,73.12,01.2020;";
+var raw_cnt_data = "0,Luxemburg,7.65;1,Dänemark,32.99;2,Schweiz,61.97;3,Österreich,71.11;4,Belgien,87.89;5,Niederlande,115.33;6,Polen,151.01;7,Italien,304.05;8,Frankreich,422.80;9,Deutschland,568.26;";
+
 var cnt_data = [];
 var btc_single_data = [];
 var btc_global_data = [];
@@ -266,14 +270,15 @@ function readTextFile(file) {
   return allText;
 }
 
-function dataSplitter(file) {
-  let textdata = readTextFile(file);
+function dataSplitter(data) {
+  // let textdata = readTextFile(file);
+  let textdata = data;
   return textdata.split(";");
 }
 
 function getGlobalBitcoinData() {
   let form_data = [];
-  let data = dataSplitter("http://localhost/data/GesamtBitcoinDaten.txt");
+  let data = dataSplitter(raw_global_btc_data);
   for(let i = 0; i < data.length - 1; i++) {
     form_data[i] = data[i].split(",");
   }
@@ -284,7 +289,7 @@ function getGlobalBitcoinData() {
 
 function getSingleBitcoinData() {
   let form_data = [];
-  let data = dataSplitter("http://localhost/data/EinzelBitcoinDaten.txt");
+  let data = dataSplitter(raw_single_btc_data);
   for(let i = 0; i < data.length - 1; i++) {
     form_data[i] = data[i].split(",");
   }
@@ -294,7 +299,7 @@ function getSingleBitcoinData() {
 
 function getCountryData() {
   let form_data = [];
-  let data = dataSplitter("http://localhost/data/LandDaten.txt")
+  let data = dataSplitter(raw_cnt_data);
   for(let i = 0; i < data.length - 1; i++) {
     form_data[i] = data[i].split(",");
 
