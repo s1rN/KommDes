@@ -645,7 +645,7 @@ h2 {
 }
 
 .th-large {
-  font-size: 32px;
+  font-size: 27px;
 }
 
 
@@ -673,4 +673,8 @@ h2 {
   padding-left: 5vw;
   padding-right: 5vw;
   text-align: justify;
+}
+
+#switch-3-2 {
+  margin-top: 30px;
 }

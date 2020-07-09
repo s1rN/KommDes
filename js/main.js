@@ -121,7 +121,7 @@ function addButtonListeners($) {
       $('#switch-3-1').addClass('show');
       route_show = false;
       $('#anim-header').html("Bitcoin vs. Elektromobilität – Überweisen oder um die Welt reisen?");
-      $('#switch3').html("Animation Anzeigen");
+      $('#switch3').html("Strecke Anzeigen");
     }
   });
 
@@ -132,11 +132,11 @@ function addButtonListeners($) {
 
 function textChanger($, _switchVal) {
   $('#twh1').html(btc_global_data[_switchVal][1] + " TWh");
-  $('#total-text').html("Energieverbrauch des Bitcoin Netzwerks im " + btc_global_data[_switchVal][2]);
+  $('#total-text').html("Energieverbrauch des Bitcoin-Netzwerks im " + btc_global_data[_switchVal][2]);
   $('#kwh1').html(btc_single_data[_switchVal][1] + " KWh");
   $('#single1-text').html("Energieverbrauch einer Bitcoin-Transaktion im " + btc_single_data[_switchVal][2]);
   $('#kwh2').html(btc_single_data[_switchVal][1] + " KWh");
-  $('#total-text').html("Energieverbrauch des Bitcoin Netzwerks im " + btc_single_data[_switchVal][2]);
+  $('#total-text').html("Energieverbrauch des Bitcoin-Netzwerks im " + btc_single_data[_switchVal][2]);
   $('#switch-label').html(btc_single_data[_switchVal][2]);
 }
 
@@ -416,7 +416,7 @@ function mapChanger(_switchVal, $) {
     case "14":
       mapCSSChanger($, 10);
       if(route_show === true) {
-        $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 6075km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Al Batha an der Grenze Zwischen Saudi Arabien und den Vereinigten Arabischen Emiraten.");
+        $('#anim-header').html("Der Energieverbrauch in " + btc_single_data[_switchVal][2] + " entspricht einer Reise von ungefähr 6075km in einem Tesla Modell 3. Damit kommt man von der HSD bis nach Al Batha in Saudi Arabien.");
       }
       break;
     case "15":
